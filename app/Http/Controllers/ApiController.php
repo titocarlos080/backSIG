@@ -20,6 +20,7 @@ class ApiController extends Controller
             where products.sales_posts_id=sales_posts.id and products.name like ?', ['%'.$producto.'%']);
         } catch (\Throwable $th) {
             //throw $th;
+            return response()->json(['error'=>'error:'.$th],500);
         }
     }
 }
