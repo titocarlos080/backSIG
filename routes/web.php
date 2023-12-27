@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('casetas/producto/{nombre}', [ApiController::class, 'tiendasXProduct']);
+Route::get('casetas/nombre/{nombre}', [ApiController::class, 'getNombre']);

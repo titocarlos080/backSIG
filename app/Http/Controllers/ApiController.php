@@ -22,5 +22,18 @@ class ApiController extends Controller
             //throw $th;
             return response()->json(['error'=>'error:'.$th],500);
         }
+    } 
+     public function getNombre($nombre)
+    {
+
+        try {
+            //code...
+            return   DB::select('select sales_posts.id ,sales_posts.name 
+            from  sales_posts 
+            where sales_posts.name like ?', ['%'.$nombre.'%']);
+        } catch (\Throwable $th) {
+            //throw $th;
+            return response()->json(['error'=>'error:'.$th],500);
+        }
     }
 }
